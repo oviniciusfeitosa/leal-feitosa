@@ -2,14 +2,13 @@ version: '2'
 services:
   webapp1:
     image: 'wordpress'
-    container_name: 'viniciusfesil'
+    container_name: 'leal-feitosa'
     expose:
       - "80"
     environment:
-      - "VIRTUAL_HOST=viniciusfesil.com.br"
-      - "WORDPRESS_DB_HOST=XXXXXXXXXXX"
-      - "WORDPRESS_DB_USER=YYYYYYYYY"
-      - "WORDPRESS_DB_PASSWORD=ZZZZZZZZZ"
+      - "WORDPRESS_DB_HOST=lealfeitosa"
+      - "WORDPRESS_DB_USER=usuario"
+      - "WORDPRESS_DB_PASSWORD=senha"
       - "WORDPRESS_DB_NAME=wp_wordpressssssss-_-"
     volumes:
       - ./wordpress/wp-content/:/var/www/html/wp-content
@@ -20,7 +19,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - "MYSQL_ROOT_PASSWORD=senha1"
+      - "MYSQL_ROOT_PASSWORD=senha"
       - "MYSQL_ROOT_HOST=0.0.0.0"
       - "MYSQL_USER=usuario"
       - "MYSQL_PASSWORD=senha"
