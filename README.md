@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+# leal-feitosa
 
-You can use the [editor on GitHub](https://github.com/vinnyfs89/leal-feitosa/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Sobre
+============
 
-### Markdown
+Este é o código do https://fazanileal.com.br. Este site é automaticamente compilado pelo [Jekyll][jekyll] a cada vez que um pull request for aceito.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+ [site]:   https://fazanileal.com.br
+ [jekyll]: https://github.com/mojombo/jekyll
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+Contribuindo
+============
 
-- Bulleted
-- List
+ * Se você perceber que algo esta errado, [abra uma issue no GitHub][issue].
 
-1. Numbered
-2. List
+ * Você mesmo pode consertar, simplesmente [edite o arquivo no GitHub][edit] e abra um novo pull request. O site será recompilado assim que o seu pull request for aceito.
 
-**Bold** and _Italic_ and `Code` text
+ * Para testar localmente, voce pode instalar o Jekyll ou executar com Docker:
 
-[Link](url) and ![Image](src)
-```
+    * Executando com Docker
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        ```bash
+        docker-compose up -d --build
+        ```
 
-### Jekyll Themes
+    * Instalando Jekyll
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vinnyfs89/leal-feitosa/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        ```bash
+        gem install bundler
+        bundle install
+        ```
 
-### Support or Contact
+        Após isso, é só compilar:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+        ```bash
+        bundle exec jekyll serve
+        ```
+
+    * Acesse o link `http://localhost:4000` no seu navegador e divirta-se!
+    
+ [issue]: https://github.com/php-fig/php-fig.github.com/issues
+ [edit]:  https://github.com/blog/905-edit-like-an-ace
+
+>Tema em jekyll por [@arkadianriver](https://github.com/arkadianriver/spectral/)
