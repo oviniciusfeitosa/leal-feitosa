@@ -1,31 +1,14 @@
 version: '2'
 services:
-  webapp1:
-    image: 'wordpress'
-    container_name: 'leal-feitosa'
-    expose:
-      - "80"
-    environment:
-      - "WORDPRESS_DB_HOST=lealfeitosa"
-      - "WORDPRESS_DB_USER=usuario"
-      - "WORDPRESS_DB_PASSWORD=senha"
-      - "WORDPRESS_DB_NAME=wp_wordpressssssss-_-"
+  site:
+    container_name: 'jekyll-leal-feitosa'
+    command: jekyll serve --watch --incremental --force_polling
+    image: jekyll/jekyll:latest
     volumes:
-      - ./wordpress/wp-content/:/var/www/html/wp-content
-      - ./wordpress/log:/var/log/php
-  database-mysql:
-    image: 'mysql'
-    container_name: 'database-mysql'
+      - .:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
     ports:
-      - "3306:3306"
-    environment:
-      - "MYSQL_ROOT_PASSWORD=senha"
-      - "MYSQL_ROOT_HOST=0.0.0.0"
-      - "MYSQL_USER=usuario"
-      - "MYSQL_PASSWORD=senha"
-      - "right=WRITE"
-    volumes:
-      - ./database/mysql/conf.d:/etc/mysql/conf.d
-      - ./database/mysql/mysql.conf.d:/etc/mysql/mysql.conf.d
-      - ./database/mysql/data:/var/lib/mysql
-      - ./database/mysql/log:/var/log/
+      - 4000:4000
+      - 35729:35729
+      - 3000:3000
+      -   83:4000
