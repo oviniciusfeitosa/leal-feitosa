@@ -1,0 +1,31 @@
+<div class="inner">
+    <header class="major">
+        <h2>Blog</h2>
+        <p>
+            <!--Atividades recentes:-->
+        </p>
+    </header>
+    <ul class="features">
+        {% for post in site.categories.blog limit:4 %}
+            <li class="icon fa-{{ post.icon | escape }}">
+                <h3>{{ post.title | escape }}</h3>
+                {% assign date_format = site.minima.date_format | default: "%d/%m/%Y  · %k:%M" %}
+                <small>{{ post.date | date: date_format }}</small>
+                <p>
+                    <span>
+                        {{ post.description }}
+                    </span>
+                    <a href="{{ post.url }}" class="button fit" target="_blank">Saiba mais</a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="inner">
+    <ul class="features">
+        <li>
+            <a href="/blog" class="button fit">Ver mais</a>
+        </li>
+    </ul>
+   
+</div>
